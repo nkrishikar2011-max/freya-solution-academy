@@ -1,10 +1,12 @@
-<!DOCTYPE html><html class="dark" lang="gu"><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<!DOCTYPE html>
+
+<html class="dark" lang="gu"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>MISSION TAT GUJRAT - એડમિન પેનલ</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -178,7 +180,7 @@
 </div>
 <div class="flex items-center gap-6">
 <div class="relative hidden sm:block">
-<input class="bg-surface-container-high border-none rounded-full px-4 py-2 text-on-surface w-64 focus:ring-2 focus:ring-primary-container" placeholder="શોધો..." type="text">
+<input class="bg-surface-container-high border-none rounded-full px-4 py-2 text-on-surface w-64 focus:ring-2 focus:ring-primary-container" placeholder="શોધો..." type="text"/>
 <span class="material-symbols-outlined absolute right-3 top-2 text-on-surface-variant" data-icon="search">search</span>
 </div>
 <div class="flex gap-4 items-center">
@@ -357,56 +359,29 @@
 <!-- Firebase Tab Content -->
 <div class="block" id="content-firebase">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div class="flex flex-col gap-2 md:col-span-2 p-4 border-2 border-dashed border-surface-variant rounded-xl bg-surface-container-low">
-    <label class="text-label-md text-on-surface-variant flex items-center gap-2">
-        <span class="material-symbols-outlined text-primary">upload_file</span>
+<label class="text-label-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">upload_file</span>
         સર્વિસ એકાઉન્ટ કી અપલોડ કરો (Upload Service Account Key JSON)
     </label>
-    <div class="flex items-center gap-4 mt-2">
-        <input type="file" id="service-account-upload" class="hidden" accept=".json">
-        <label for="service-account-upload" class="bg-secondary-container text-on-secondary-container px-4 py-2 rounded-lg cursor-pointer hover:bg-surface-container-high transition-all font-label-md">
+<div class="flex items-center gap-4 mt-2">
+<input accept=".json" class="hidden" id="service-account-upload" type="file"/>
+<label class="bg-secondary-container text-on-secondary-container px-4 py-2 rounded-lg cursor-pointer hover:bg-surface-container-high transition-all font-label-md" for="service-account-upload">
             ફાઇલ પસંદ કરો
         </label>
-        <div id="upload-status" class="flex items-center gap-2 text-label-md text-on-surface-variant">
-            <span class="material-symbols-outlined animate-pulse text-yellow-400">sync</span>
-            <span class="">Validating... (service-account.json)</span>
-        </div>
-    </div>
-    <p class="text-xs text-on-tertiary-container/60 mt-2">JSON ફાઇલ અપલોડ કરવાથી નીચેના ફીલ્ડ્સ આપમેળે ભરાઈ જશે.</p>
+<div class="flex items-center gap-2 text-label-md text-on-surface-variant" id="upload-status">
+<span class="material-symbols-outlined animate-pulse text-yellow-400">sync</span>
+<span class="">Validating... (service-account.json)</span>
 </div>
-<div class="flex flex-col gap-2">
-<label class="text-label-md text-on-surface-variant">API કી (API Key)</label>
-<input class="bg-surface-container-high border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container" placeholder="તમારી API કી દાખલ કરો" type="text">
-<div class="flex items-center gap-1 text-green-400 text-xs mt-1">
-    <span class="material-symbols-outlined text-xs">check_circle</span>
-    <span class="">JSON માંથી મેળવેલ</span>
-</div></div>
-<div class="flex flex-col gap-2">
-<label class="text-label-md text-on-surface-variant">પ્રોજેક્ટ ID (Project ID)</label>
-<input class="bg-surface-container-high border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container" placeholder="તમારો પ્રોજેક્ટ ID દાખલ કરો" type="text">
-<div class="flex items-center gap-1 text-green-400 text-xs mt-1">
-    <span class="material-symbols-outlined text-xs">check_circle</span>
-    <span class="">JSON માંથી મેળવેલ</span>
-</div></div>
-<div class="flex flex-col gap-2">
-<label class="text-label-md text-on-surface-variant">ઓથ ડોમેન (Auth Domain)</label>
-<input class="bg-surface-container-high border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container" placeholder="તમારું ઓથ ડોમેન દાખલ કરો" type="text">
-<div class="flex items-center gap-1 text-green-400 text-xs mt-1">
-    <span class="material-symbols-outlined text-xs">check_circle</span>
-    <span class="">JSON માંથી મેળવેલ</span>
-</div></div>
-<div class="flex flex-col gap-2">
-<label class="text-label-md text-on-surface-variant">સ્ટોરેજ બકેટ (Storage Bucket)</label>
-<input class="bg-surface-container-high border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container" placeholder="તમારું સ્ટોરેજ બકેટ દાખલ કરો" type="text">
-<div class="flex items-center gap-1 text-green-400 text-xs mt-1">
-    <span class="material-symbols-outlined text-xs">check_circle</span>
-    <span class="">JSON માંથી મેળવેલ</span>
-</div></div>
+</div>
+<p class="text-xs text-on-tertiary-container/60 mt-2">JSON ફાઇલ અપલોડ કરવાથી નીચેના ફીલ્ડ્સ આપમેળે ભરાઈ જશે.</p>
+</div>
+<div class="flex flex-col gap-2"><label class="text-label-md text-on-surface-variant">API કી (API Key)</label><input class="bg-surface-container-high border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container" type="text" value="mission-tat-gujrat-ai"/><div class="flex items-center gap-1 text-green-400 text-xs mt-1"><span class="material-symbols-outlined text-xs">check_circle</span><span class="">JSON માંથી મેળવેલ</span></div></div>
+<div class="flex flex-col gap-2"><label class="text-label-md text-on-surface-variant">પ્રોજેક્ટ ID (Project ID)</label><input class="bg-surface-container-high border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container" type="text" value="mission-tat-gujrat-ai"/><div class="flex items-center gap-1 text-green-400 text-xs mt-1"><span class="material-symbols-outlined text-xs">check_circle</span><span class="">JSON માંથી મેળવેલ</span></div></div>
+<div class="flex flex-col gap-2"><label class="text-label-md text-on-surface-variant">ઓથ ડોમેન (Auth Domain)</label><input class="bg-surface-container-high border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container" type="text" value="firebase-adminsdk-fbsvc@mission-tat-gujrat-ai.iam.gserviceaccount.com"/><div class="flex items-center gap-1 text-green-400 text-xs mt-1"><span class="material-symbols-outlined text-xs">check_circle</span><span class="">JSON માંથી મેળવેલ</span></div></div>
+<div class="flex flex-col gap-2"><label class="text-label-md text-on-surface-variant">સ્ટોરેજ બકેટ (Storage Bucket)</label><input class="bg-surface-container-high border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container" type="text" value="32a35ee7a5130301bb8dc82efa8c5b8f4a765785"/><div class="flex items-center gap-1 text-green-400 text-xs mt-1"><span class="material-symbols-outlined text-xs">check_circle</span><span class="">JSON માંથી મેળવેલ</span></div></div>
 </div>
 <div class="mt-8 flex justify-end">
-<button class="bg-green-900/30 text-green-400 border border-green-400 font-bold py-3 px-8 rounded-lg flex items-center gap-2 transition-all">
-    <span class="material-symbols-outlined">task_alt</span>
-    સેટિંગ્સ સફળતાપૂર્વક સાચવવામાં આવી (Settings Saved Successfully)
-</button>
+<button class="bg-green-900/30 text-green-400 border border-green-400 font-bold py-3 px-8 rounded-lg flex items-center gap-2 transition-all"><span class="material-symbols-outlined">task_alt</span>સેટિંગ્સ સફળતાપૂર્વક સાચવવામાં આવી (Settings Saved Successfully)</button>
 </div>
 </div>
 <!-- Razorpay Tab Content (Hidden by default in this static representation) -->
@@ -414,11 +389,11 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="flex flex-col gap-2">
 <label class="text-label-md text-on-surface-variant">રેઝરપે કી ID (Razorpay Key ID)</label>
-<input class="bg-surface-container-high border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container" placeholder="તમારી Razorpay Key ID દાખલ કરો" type="text">
+<input class="bg-surface-container-high border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container" placeholder="તમારી Razorpay Key ID દાખલ કરો" type="text"/>
 </div>
 <div class="flex flex-col gap-2">
 <label class="text-label-md text-on-surface-variant">રેઝરપે કી સિક્રેટ (Razorpay Key Secret)</label>
-<input class="bg-surface-container-high border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container" placeholder="તમારી Razorpay Key Secret દાખલ કરો" type="password">
+<input class="bg-surface-container-high border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container" placeholder="તમારી Razorpay Key Secret દાખલ કરો" type="password"/>
 </div>
 </div>
 <div class="mt-8 flex justify-end">
@@ -442,6 +417,4 @@
 <div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] rounded-full bg-primary-container blur-[120px] animate-pulse"></div>
 <div class="absolute -bottom-[10%] -right-[10%] w-[30%] h-[30%] rounded-full bg-secondary-container blur-[100px] delay-1000 animate-pulse"></div>
 </div>
-
-
 </body></html>
