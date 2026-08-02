@@ -130,7 +130,6 @@
 <body class="flex items-center justify-center min-h-screen relative">
 <!-- Background Layer -->
 <div class="fixed inset-0 z-0">
-
 <div class="absolute inset-0 cinema-gradient"></div>
 </div>
 <!-- Login Container -->
@@ -163,16 +162,14 @@
                         પાસવર્ડ
                     </label>
 <div class="relative">
-<input class="w-full bg-surface-container-high border-none border-b-2 border-transparent text-on-surface p-4 rounded-lg font-body-md text-body-md input-focus-effect transition-all" id="password" placeholder="તમારો પાસવર્ડ" required="" type="password"/>
+<input class="w-full bg-surface-container-high border-none border-b-2 border-transparent text-on-surface p-4 rounded-lg font-body-md text-body-md input-focus-effect transition-all" id="password" placeholder="admin123" required="" type="password"/>
 <button class="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors" onclick="togglePassword()" type="button">
 <span class="material-symbols-outlined" id="eyeIcon">visibility</span>
 </button>
 </div>
 </div>
 <!-- Action Button -->
-<button class="shimmer w-full bg-primary-container text-white py-4 rounded-lg font-headline-md text-headline-md font-bold transition-all duration-300 hover:brightness-110 active:scale-[0.98] shadow-lg shadow-primary-container/20" type="submit">
-                    લોગિન કરો
-                </button>
+<a class="shimmer w-full bg-primary-container text-white py-4 rounded-lg font-headline-md text-headline-md font-bold transition-all duration-300 hover:brightness-110 active:scale-[0.98] shadow-lg shadow-primary-container/20 flex items-center justify-center" href="{{DATA:SCREEN:SCREEN_9}}">લોગિન કરો</a><p class="text-on-surface-variant text-xs text-center mt-2">નોંધ: તમારો ડિફોલ્ટ પાસવર્ડ 'admin123' છે.</p>
 <!-- Security Notice -->
 <div class="pt-6 border-t border-surface-variant/30 text-center">
 <p class="text-on-surface-variant text-xs flex items-center justify-center gap-2">
