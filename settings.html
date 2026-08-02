@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="gu"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>એડમિન - સેટિંગ્સ અને કોન્ફિગરેશન</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Noto+Sans+Gujarati:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', 'Noto Sans Gujarati', sans-serif;
+            background-color: #000000;
+            color: #e5e2e1;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: #141414;
+            border: 1px solid #2F2F2F;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: scale(1.02);
+            border-color: #E50914;
+        }
+        .cinema-gradient {
+            background: linear-gradient(180deg, rgba(20,20,20,0) 0%, rgba(0,0,0,1) 100%);
+        }
+        .status-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #E50914; }
+    </style>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "tertiary-container": "#737272",
+                "on-primary-container": "#fff7f6",
+                "inverse-surface": "#e5e2e1",
+                "outline-variant": "#5e3f3b",
+                "on-tertiary": "#303030",
+                "primary": "#ffb4aa",
+                "on-secondary": "#2f3131",
+                "on-primary-fixed-variant": "#930007",
+                "surface-container-highest": "#353534",
+                "on-tertiary-fixed-variant": "#474747",
+                "inverse-on-surface": "#313030",
+                "error": "#ffb4ab",
+                "background": "#131313",
+                "on-error-container": "#ffdad6",
+                "inverse-primary": "#c0000c",
+                "on-secondary-fixed": "#1a1c1c",
+                "on-background": "#e5e2e1",
+                "surface-dim": "#131313",
+                "surface-container-lowest": "#0e0e0e",
+                "on-primary-fixed": "#410001",
+                "tertiary": "#c8c6c6",
+                "surface-tint": "#ffb4aa",
+                "secondary": "#c6c6c7",
+                "on-tertiary-container": "#fbf8f8",
+                "surface-variant": "#353534",
+                "primary-fixed-dim": "#ffb4aa",
+                "on-secondary-container": "#b4b5b5",
+                "primary-fixed": "#ffdad5",
+                "on-surface-variant": "#e9bcb6",
+                "on-surface": "#e5e2e1",
+                "surface-container": "#201f1f",
+                "on-secondary-fixed-variant": "#454747",
+                "on-error": "#690005",
+                "surface": "#131313",
+                "surface-container-high": "#2a2a2a",
+                "surface-bright": "#393939",
+                "outline": "#af8782",
+                "tertiary-fixed-dim": "#c8c6c6",
+                "on-tertiary-fixed": "#1b1c1c",
+                "error-container": "#93000a",
+                "on-primary": "#690003",
+                "secondary-fixed": "#e2e2e2",
+                "primary-container": "#e50914",
+                "surface-container-low": "#1c1b1b",
+                "tertiary-fixed": "#e4e2e1",
+                "secondary-container": "#454747",
+                "secondary-fixed-dim": "#c6c6c7"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "section-gap": "48px",
+                "container-padding-mobile": "16px",
+                "container-padding-desktop": "60px",
+                "gutter": "20px",
+                "unit": "4px"
+            },
+            "fontFamily": {
+                "headline-lg": ["Inter", "Noto Sans Gujarati"],
+                "display-lg": ["Inter", "Noto Sans Gujarati"],
+                "body-md": ["Inter", "Noto Sans Gujarati"],
+                "headline-md": ["Inter", "Noto Sans Gujarati"],
+                "label-md": ["Inter", "Noto Sans Gujarati"]
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-black text-on-surface">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center px-container-desktop w-full sticky top-0 z-40 bg-opacity-80 backdrop-blur-md bg-surface-container-lowest border-b border-surface-variant h-16">
+<div class="flex items-center gap-4">
+<h1 class="font-headline-md text-headline-md font-bold text-primary-container">Freya Solution Academy</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center bg-surface-container-high rounded-full px-4 py-1.5 border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-64" placeholder="શોધો..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors" data-icon="help">help</span>
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional admin profile avatar for a tech-savvy manager, styled in a dark cinematic noir aesthetic. The person is silhouetted against a subtle red backlight, wearing a modern corporate suit. The lighting is moody and high-contrast, emphasizing a premium and exclusive leadership role within a high-end digital academy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE-cWjiV8468rDksf9VqLJjLpfvxE-MyM15PqE3xYIxozL6pkEvpcJXIuSthtauD0puMKrVYxpJaREXPQe45VpJuDZ3C_20W8B_EL5MQLve7PFTJUxKR0awzsHCjt8fiTAh96rKY3VocD-hmgaqm2lf9ccQyyGlXvyojgehk6cIOxDgVt9ziQaDb8EzXwuJJ7yPgvmoUR6IPJf330Zj0zo8TZEMTKKJcX7sGzj06NBM6cJpST80H8"/>
+</div>
+</div>
+</div>
+</header>
+<div class="flex">
+<!-- SideNavBar -->
+<aside class="w-64 h-screen fixed left-0 top-0 flex flex-col py-6 border-r border-surface-variant bg-surface-container hidden md:flex z-50">
+<div class="px-6 mb-10">
+<div class="flex items-center gap-3 mb-1">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="admin_panel_settings">admin_panel_settings</span>
+</div>
+<div>
+<h2 class="font-headline-md text-primary-container leading-tight">Freya Admin</h2>
+<p class="text-[10px] text-on-surface-variant tracking-widest uppercase">Academy Control</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center text-on-surface-variant px-4 py-3 mx-2 hover:bg-surface-variant transition-transform hover:scale-105" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center text-on-surface-variant px-4 py-3 mx-2 hover:bg-surface-variant transition-transform hover:scale-105" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="folder_open">folder_open</span>
+<span class="font-label-md text-label-md">Resources</span>
+</a>
+<a class="flex items-center text-on-surface-variant px-4 py-3 mx-2 hover:bg-surface-variant transition-transform hover:scale-105" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="cloud_upload">cloud_upload</span>
+<span class="font-label-md text-label-md">Uploads</span>
+</a>
+<a class="flex items-center text-on-surface-variant px-4 py-3 mx-2 hover:bg-surface-variant transition-transform hover:scale-105" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="bar_chart">bar_chart</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+<a class="flex items-center text-on-primary-container bg-primary-container rounded-lg px-4 py-3 mx-2 shadow-lg" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<button class="w-full bg-white/10 backdrop-blur-md text-white font-bold py-3 rounded-lg border border-white/20 hover:bg-white/20 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                    New Upload
+                </button>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 md:ml-64 p-container-padding-mobile md:p-container-padding-desktop">
+<header class="mb-section-gap">
+<h2 class="font-headline-lg text-headline-lg text-white mb-2">એડમિન - સેટિંગ્સ અને કોન્ફિગરેશન</h2>
+<p class="text-on-surface-variant font-body-lg max-w-2xl">તમારા એકેડમી પ્લેટફોર્મ માટે કન્ફિગરેશન, ફાયરબેઝ સર્વિસ અને પેમેન્ટ ગેટવે ઇન્ટિગ્રેશન મેનેજ કરો.</p>
+</header>
+<!-- Troubleshooting Dashboard (Bento Layout) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-section-gap">
+<!-- Status Card -->
+<div class="glass-card p-6 rounded-xl md:col-span-2 flex flex-col justify-between">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-md text-white mb-1">સિસ્ટમ સ્ટેટસ</h3>
+<p class="text-on-surface-variant text-sm">રીઅલ-ટાઇમ કનેક્ટિવિટી મોનિટરિંગ</p>
+</div>
+<div class="flex items-center gap-2 bg-green-500/10 text-green-500 px-3 py-1 rounded-full text-xs font-bold border border-green-500/20">
+<span class="w-2 h-2 bg-green-500 rounded-full status-pulse"></span>
+                            ACTIVE
+                        </div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" data-icon="database">database</span>
+<div>
+<p class="text-sm font-bold">Firebase Cloud Storage</p>
+<p class="text-xs text-on-surface-variant">કનેક્ટેડ અને સિંક્રનાઇઝ્ડ</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-green-500" data-icon="check_circle">check_circle</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" data-icon="payments">payments</span>
+<div>
+<p class="text-sm font-bold">Razorpay API</p>
+<p class="text-xs text-on-surface-variant">પેમેન્ટ ગેટવે તૈયાર છે</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-green-500" data-icon="check_circle">check_circle</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg border border-error-container/30 bg-error-container/5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error" data-icon="warning">warning</span>
+<div>
+<p class="text-sm font-bold">Auth Webhook</p>
+<p class="text-xs text-error">વેબહૂક રિસ્પોન્સમાં વિલંબ છે</p>
+</div>
+</div>
+<button class="text-xs bg-error-container text-white px-2 py-1 rounded">ટ્રબલશૂટ</button>
+</div>
+</div>
+</div>
+<!-- Integration Image/Graphic Card -->
+<div class="glass-card rounded-xl overflow-hidden relative group">
+<div class="absolute inset-0 cinema-gradient z-10"></div>
+<div class="absolute inset-0 group-hover:scale-110 transition-transform duration-700 h-full w-full" data-alt="A hyper-realistic cinematic shot of a high-tech server room at night. Cool blue and deep red neon lights reflect off sleek metallic surfaces. Digital data streams in the form of glowing light particles flow through the air, symbolizing rapid Firebase and payment integration. The atmosphere is quiet, powerful, and futuristic, following a dark noir aesthetic with extreme focus on tech sophistication." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWpw7zOrmpDNM3OEPRr8RNxG7hTeF-aydT_llzTrAfysR775aCh-FFo04YoPmvilLFDfQRk55sODgmjplVM4xh1-WElRmNXJuoln1PuOewaIlVoe2Q_uWZhodE_8Cd6Hsv-d_pxpeJ9SlxTZoCp-T1JFwNyoMpuc8jiCsrLnDoSI0GRtg_aIfJk4Wxg6327FwQxthRzwB0RUc88GZJQaAwqXHSQipo-B6h3QSlyBE7yfI5MFBZhlk')"></div>
+<div class="relative z-20 p-6 h-full flex flex-col justify-end">
+<p class="text-xs font-bold text-primary-container mb-1 tracking-widest">ADVANCED</p>
+<h4 class="font-headline-md text-white">સીમલેસ ઇન્ટિગ્રેશન</h4>
+<p class="text-xs text-on-surface-variant mt-2">તમારા ડેટાની સુરક્ષા અમારી પ્રાથમિકતા છે.</p>
+</div>
+</div>
+</section>
+<!-- Configuration Forms -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-section-gap">
+<!-- Firebase Configuration -->
+<div class="space-y-6">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary-container text-3xl" data-icon="local_fire_department">local_fire_department</span>
+<h3 class="font-headline-md text-white">ફાયરબેઝ (Firebase) કન્ફિગરેશન</h3>
+</div>
+<div class="glass-card p-8 rounded-xl border-l-4 border-l-primary-container">
+<p class="text-on-surface-variant mb-6 text-sm">સર્વિસ એકાઉન્ટ JSON ફાઇલ અપલોડ કરો. આ ફાઇલ Firebase Console માંથી ડાઉનલોડ કરી શકાય છે.</p>
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-10 flex flex-col items-center justify-center cursor-pointer hover:border-primary-container transition-colors group bg-surface-container-low mb-6">
+<span class="material-symbols-outlined text-5xl text-on-surface-variant group-hover:text-primary-container mb-4" data-icon="upload_file">upload_file</span>
+<p class="font-bold text-white mb-1">JSON ફાઇલ અહીં ખેંચો અથવા ક્લિક કરો</p>
+<p class="text-xs text-on-surface-variant">માત્ર .json ફાઇલ (મહત્તમ 2MB)</p>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block text-xs font-bold text-on-surface-variant uppercase mb-2">Project ID</label>
+<input class="w-full bg-surface-container-high border-none rounded-lg text-white font-mono text-sm focus:ring-primary-container" readonly="" type="text" value="freya-academy-v2"/>
+</div>
+<button class="w-full bg-primary-container text-white font-bold py-4 rounded-lg hover:brightness-110 transition-all shadow-lg shadow-primary-container/20 uppercase tracking-widest text-sm">
+                                કન્ફિગરેશન સાચવો
+                            </button>
+</div>
+</div>
+</div>
+<!-- Razorpay Integration -->
+<div class="space-y-6">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary-container text-3xl" data-icon="account_balance_wallet">account_balance_wallet</span>
+<h3 class="font-headline-md text-white">રેઝરપે (Razorpay) ઇન્ટિગ્રેશન</h3>
+</div>
+<div class="glass-card p-8 rounded-xl border-l-4 border-l-primary-container">
+<p class="text-on-surface-variant mb-6 text-sm">તમારા પેમેન્ટ ગેટવેને સક્રિય કરવા માટે API કી વિગતો દાખલ કરો.</p>
+<form class="space-y-6">
+<div class="relative group">
+<label class="block text-xs font-bold text-on-surface-variant uppercase mb-2">Key ID</label>
+<input class="w-full bg-[#333333] border-b-2 border-transparent focus:border-primary-container transition-all p-3 text-white focus:ring-0 outline-none" placeholder="rzp_live_xxxxxxxxxxxx" type="password"/>
+</div>
+<div class="relative group">
+<label class="block text-xs font-bold text-on-surface-variant uppercase mb-2">Key Secret</label>
+<input class="w-full bg-[#333333] border-b-2 border-transparent focus:border-primary-container transition-all p-3 text-white focus:ring-0 outline-none" placeholder="••••••••••••••••••••••••" type="password"/>
+</div>
+<div class="flex items-center gap-4 p-4 bg-surface-container-high rounded-lg border border-outline-variant">
+<div class="flex-1">
+<p class="text-sm font-bold">ટેસ્ટ મોડ (Sandbox)</p>
+<p class="text-xs text-on-surface-variant">પેમેન્ટ પ્રોસેસિંગની ચકાસણી કરવા માટે</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<button class="w-full bg-primary-container text-white font-bold py-4 rounded-lg hover:brightness-110 transition-all shadow-lg shadow-primary-container/20 uppercase tracking-widest text-sm" type="submit">
+                                કનેક્શન તપાસો અને સાચવો
+                            </button>
+</form>
+</div>
+</div>
+</div>
+<!-- Global Footer Status -->
+<footer class="mt-section-gap border-t border-surface-variant pt-8 flex flex-col md:flex-row justify-between items-center gap-4 opacity-50">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-green-500 rounded-full"></span>
+<p class="text-xs">તમામ સિસ્ટમ્સ કાર્યરત છે | છેલ્લું અપડેટ: હમણાં જ</p>
+</div>
+<div class="flex gap-6 text-xs font-bold uppercase tracking-widest">
+<a class="hover:text-primary transition-colors" href="#">નિયમો અને શરતો</a>
+<a class="hover:text-primary transition-colors" href="#">મદદ કેન્દ્ર</a>
+<a class="hover:text-primary transition-colors" href="#">સુરક્ષા ઓડિટ</a>
+</div>
+</footer>
+</main>
+</div>
+<!-- Mobile Navigation (Only visible on small screens) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface-container-lowest backdrop-blur-xl border-t border-surface-variant grid grid-cols-5 py-2 px-2 z-50">
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-1" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="dashboard">dashboard</span>
+<span class="text-[10px]">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-1" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="folder_open">folder_open</span>
+<span class="text-[10px]">Resources</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-1" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="add_circle">add_circle</span>
+<span class="text-[10px]">New</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-1" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="bar_chart">bar_chart</span>
+<span class="text-[10px]">Stats</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary-container font-bold py-1" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="text-[10px]">Settings</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for form inputs
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('scale-[1.01]');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.classList.remove('scale-[1.01]');
+            });
+        });
+
+        // Simple feedback for button clicks
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', () => btn.classList.add('scale-95'));
+            btn.addEventListener('mouseup', () => btn.classList.remove('scale-95'));
+            btn.addEventListener('mouseleave', () => btn.classList.remove('scale-95'));
+        });
+    </script>
+</body></html>

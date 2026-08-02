@@ -3,278 +3,412 @@
 <html class="dark" lang="gu"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>સંપર્ક કરો | MISSION TAT GUJRAT</title>
+<title>સંપર્ક અને સહાય કેન્દ્ર - Freya Academy</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #000000;
-            color: #e5e2e1;
-            overflow-x: hidden;
-        }
-
-        .glass-card {
-            background: rgba(20, 20, 20, 0.8);
-            backdrop-filter: blur(12px);
-            border: 1px solid #2F2F2F;
-            transition: all 0.3s ease;
-        }
-
-        .glass-card:hover {
-            transform: scale(1.02);
-            border-color: #e50914;
-            box-shadow: 0px 20px 40px rgba(0,0,0,0.8);
-        }
-
-        .cinematic-gradient {
-            background: linear-gradient(180deg, rgba(229, 9, 20, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
-        }
-
-        .input-focus-effect:focus {
-            outline: none;
-            border-bottom-color: #e50914;
-        }
-
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-
-        /* Custom scrollbar for cinematic feel */
-        ::-webkit-scrollbar {
-            width: 8px;
+        .noir-gradient {
+            background: linear-gradient(180deg, rgba(20, 20, 20, 0) 0%, rgba(0, 0, 0, 1) 100%);
         }
-        ::-webkit-scrollbar-track {
-            background: #000000;
+        .glass-card {
+            background: rgba(20, 20, 20, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(47, 47, 47, 0.5);
         }
-        ::-webkit-scrollbar-thumb {
-            background: #2F2F2F;
-            border-radius: 4px;
+        .input-focus-effect:focus {
+            outline: none;
+            border-bottom-color: #E50914;
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #e50914;
+        body {
+            background-color: #000000;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
         }
     </style>
 <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "on-secondary": "#2f3131",
-                    "on-error": "#690005",
-                    "outline-variant": "#5e3f3b",
-                    "background": "#131313",
-                    "surface-container-high": "#2a2a2a",
-                    "on-tertiary": "#303030",
-                    "secondary-fixed-dim": "#c6c6c7",
-                    "tertiary": "#c8c6c6",
-                    "outline": "#af8782",
-                    "primary-container": "#e50914",
-                    "on-secondary-fixed-variant": "#454747",
-                    "on-tertiary-fixed": "#1b1c1c",
-                    "on-primary-fixed-variant": "#930007",
-                    "on-background": "#e5e2e1",
-                    "tertiary-fixed-dim": "#c8c6c6",
-                    "surface-container-low": "#1c1b1b",
-                    "secondary": "#c6c6c7",
-                    "on-secondary-container": "#b4b5b5",
-                    "on-tertiary-fixed-variant": "#474747",
-                    "primary-fixed-dim": "#ffb4aa",
-                    "inverse-on-surface": "#313030",
-                    "on-error-container": "#ffdad6",
-                    "on-primary": "#690003",
-                    "tertiary-container": "#737272",
-                    "secondary-fixed": "#e2e2e2",
-                    "error": "#ffb4ab",
-                    "tertiary-fixed": "#e4e2e1",
-                    "surface-bright": "#393939",
-                    "surface-variant": "#353534",
-                    "on-surface": "#e5e2e1",
-                    "on-surface-variant": "#e9bcb6",
-                    "on-secondary-fixed": "#1a1c1c",
-                    "primary": "#ffb4aa",
-                    "on-primary-container": "#fff7f6",
-                    "inverse-surface": "#e5e2e1",
-                    "surface-dim": "#131313",
-                    "surface-container": "#201f1f",
-                    "surface-tint": "#ffb4aa",
-                    "on-tertiary-container": "#fbf8f8",
-                    "secondary-container": "#454747",
-                    "on-primary-fixed": "#410001",
-                    "primary-fixed": "#ffdad5",
-                    "surface": "#131313",
-                    "surface-container-highest": "#353534",
-                    "surface-container-lowest": "#0e0e0e",
-                    "error-container": "#93000a",
-                    "inverse-primary": "#c0000c"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "full": "0.75rem"
-            },
-            "spacing": {
-                    "unit": "4px",
-                    "container-padding-mobile": "16px",
-                    "container-padding-desktop": "60px",
-                    "gutter": "20px",
-                    "section-gap": "48px"
-            },
-            "fontFamily": {
-                    "body-md": ["Inter"],
-                    "display-lg": ["Inter"],
-                    "label-md": ["Inter"],
-                    "headline-md": ["Inter"],
-                    "headline-lg-mobile": ["Inter"],
-                    "headline-lg": ["Inter"],
-                    "body-lg": ["Inter"]
-            },
-            "fontSize": {
-                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
-                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
-                    "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#737272",
+                        "on-primary-container": "#fff7f6",
+                        "inverse-surface": "#e5e2e1",
+                        "outline-variant": "#5e3f3b",
+                        "on-tertiary": "#303030",
+                        "primary": "#ffb4aa",
+                        "on-secondary": "#2f3131",
+                        "on-primary-fixed-variant": "#930007",
+                        "surface-container-highest": "#353534",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "inverse-on-surface": "#313030",
+                        "error": "#ffb4ab",
+                        "background": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#c0000c",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-background": "#e5e2e1",
+                        "surface-dim": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary-fixed": "#410001",
+                        "tertiary": "#c8c6c6",
+                        "surface-tint": "#ffb4aa",
+                        "secondary": "#c6c6c7",
+                        "on-tertiary-container": "#fbf8f8",
+                        "surface-variant": "#353534",
+                        "primary-fixed-dim": "#ffb4aa",
+                        "on-secondary-container": "#b4b5b5",
+                        "primary-fixed": "#ffdad5",
+                        "on-surface-variant": "#e9bcb6",
+                        "on-surface": "#e5e2e1",
+                        "surface-container": "#201f1f",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-error": "#690005",
+                        "surface": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-bright": "#393939",
+                        "outline": "#af8782",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "error-container": "#93000a",
+                        "on-primary": "#690003",
+                        "secondary-fixed": "#e2e2e2",
+                        "primary-container": "#e50914",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary-fixed": "#e4e2e1",
+                        "secondary-container": "#454747",
+                        "secondary-fixed-dim": "#c6c6c7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-gap": "48px",
+                        "container-padding-mobile": "16px",
+                        "container-padding-desktop": "60px",
+                        "gutter": "20px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                }
             }
-          },
-        },
-      }
+        }
     </script>
 </head>
-<body class="bg-background">
-<!-- Top Navigation Bar -->
-<header class="fixed top-0 w-full z-50 flex justify-between items-center px-container-padding-mobile md:px-container-padding-desktop py-4 bg-background/80 backdrop-blur-xl border-b border-secondary-container shadow-2xl">
-<div class="font-display-lg text-headline-md md:text-display-lg font-black text-primary-container tracking-tighter">
-            MISSION TAT GUJRAT
-        </div>
-<nav class="hidden md:flex gap-8 items-center"><a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" href="index.html">હોમ</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" href="library.html">પુસ્તકાલય</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" href="premium.html">પ્રીમિયમ</a><a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="contact.html">સંપર્ક</a></nav>
-<div class="flex items-center gap-4">
-<button class="material-symbols-outlined text-primary text-2xl hover:scale-110 transition-transform">account_circle</button>
-<button class="md:hidden material-symbols-outlined text-on-surface" id="mobile-menu-btn">menu</button>
+<body class="dark overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="flex justify-between items-center px-container-desktop w-full sticky top-0 z-40 bg-surface-container-lowest bg-opacity-80 backdrop-blur-md h-16 border-b border-surface-variant">
+<div class="flex items-center gap-8">
+<span class="font-headline-md text-headline-md font-bold text-primary-container">Freya Solution Academy</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">મુખ્ય પૃષ્ઠ</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">અભ્યાસક્રમો</a>
+<a class="text-primary font-bold font-body-md text-body-md" href="#">સંપર્ક</a>
 </div>
-</header>
-<main class="pt-32 pb-section-gap px-container-padding-mobile md:px-container-padding-desktop cinematic-gradient">
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="bg-surface-container border-none rounded-full pl-10 pr-4 py-1 text-sm focus:ring-1 focus:ring-primary-container w-64" placeholder="શોધો..." type="text"/>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary-container">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary-container">help</span>
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center overflow-hidden border border-outline">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a female administrator with a kind expression, set against a dark, minimalist background. The lighting is dramatic and moody, reflecting a high-end cinematic aesthetic with deep blacks and sharp highlights on her face. Her attire is corporate and modern, fitting the professional academy vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBflyGaBo0QTeyuRASVQZpnhMXtWK0iQzmFq0DX8JaAA-uNaHLofenQtzHRnxR1nANBPaqw7xdiB414lKHO3rkVlwCg4ROYiirNOJffu8upIIR4ZO11npuqtuC5byWpzYaUAIG5x3fg-a0tu6AYeij22vQ1Gskg9wtiisAdJdaBkL9ItDaK12d1Lza8S_vDXjAhbag4FR9ltXw-s_QyTH2XUYxYNRpxFkkwp1gjOU71DMS8Dax_osA"/>
+</div>
+</div>
+</nav>
+<!-- SideNavBar (Hidden on desktop as per Shell Visibility Rules for sub-pages, but providing context) -->
+<aside class="hidden fixed left-0 top-16 w-64 h-[calc(100vh-64px)] bg-surface-container flex-col py-6 border-r border-surface-variant transition-transform duration-300">
+<!-- Content if needed -->
+</aside>
+<main class="min-h-screen">
 <!-- Hero Section -->
-<section class="mb-section-gap max-w-4xl">
-<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-4">
-                અમારો સંપર્ક કરો
-            </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                તમારા શિક્ષણના સપનાને સાકાર કરવામાં અમે તમારી સાથે છીએ. કોઈપણ પ્રશ્ન અથવા સહાય માટે નીચે આપેલા ફોર્મ દ્વારા અથવા સોશિયલ મીડિયા દ્વારા અમારો સંપર્ક કરો.
-            </p>
+<section class="relative h-[614px] w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center opacity-60" data-alt="A dark cinematic landscape showing a glowing digital connection node in the center of a pitch-black void. Wisps of deep red light smoke swirl around the center, creating a sense of mystery and premium support. The lighting is low-key, with the only illumination coming from the central red node, casting long shadows across an invisible floor. Minimalist and high-end noir style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCkntnvcjK2RV_EsQVcnAGYMCcGScE_NniqHdVY21drQd31rHb5N8ckf7Iu-b7A4SsGIhTahoBFs8sTqMQKOStA_U36rXPx8bboFiyLoiOqz-zYCyR-vA5_JfmLuM5d-blR79Y-pYI6ovq5a9IJlGOPPI_e4rgy-zH_-VhRHcgMVppnBGIjo4aUuq0S9WzD3Rp5d84hlmyyGUAnMtVS60PKjm_31xnHkAFlXSqg9JWTYTziRyMA5qU')"></div>
+<div class="absolute inset-0 noir-gradient"></div>
+</div>
+<div class="relative z-10 text-center px-container-padding-mobile md:px-container-padding-desktop">
+<h1 class="font-display-lg text-display-lg md:text-display-lg text-on-background mb-4">સંપર્ક અને સહાય કેન્દ્ર</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">અમે તમારી શૈક્ષણિક સફરને સરળ બનાવવા માટે અહીં છીએ. ગમે ત્યારે અમારો સંપર્ક કરો.</p>
+</div>
 </section>
-<!-- Bento Grid Layout for Contact Content -->
-<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-<!-- Contact Form Card -->
-<div class="md:col-span-7 glass-card p-8 rounded-xl">
-<h2 class="font-headline-md text-headline-md text-primary mb-8">સંદેશ મોકલો</h2>
+<!-- Main Content Grid -->
+<section class="px-container-padding-mobile md:px-container-padding-desktop py-section-gap max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Contact Form Section -->
+<div class="lg:col-span-7">
+<div class="glass-card p-8 rounded-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-8 border-l-4 border-primary-container pl-4">અમને સંદેશ મોકલો</h2>
 <form class="space-y-6">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="flex flex-col gap-2">
+<div class="space-y-2">
 <label class="font-label-md text-label-md text-on-surface-variant">તમારું નામ</label>
-<input class="bg-[#333333] border-b-2 border-transparent focus:border-primary-container text-white p-3 rounded-t-lg transition-all" placeholder="નામ લખો" type="text"/>
+<input class="w-full bg-[#333333] border-b-2 border-transparent text-white p-3 input-focus-effect transition-all" placeholder="નામ દાખલ કરો" type="text"/>
 </div>
-<div class="flex flex-col gap-2">
-<label class="font-label-md text-label-md text-on-surface-variant">ઈમેઈલ આઈડી</label>
-<input class="bg-[#333333] border-b-2 border-transparent focus:border-primary-container text-white p-3 rounded-t-lg transition-all" placeholder="example@mail.com" type="email"/>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">ઈમેઈલ સરનામું</label>
+<input class="w-full bg-[#333333] border-b-2 border-transparent text-white p-3 input-focus-effect transition-all" placeholder="example@mail.com" type="email"/>
 </div>
 </div>
-<div class="flex flex-col gap-2">
+<div class="space-y-2">
 <label class="font-label-md text-label-md text-on-surface-variant">વિષય</label>
-<input class="bg-[#333333] border-b-2 border-transparent focus:border-primary-container text-white p-3 rounded-t-lg transition-all" placeholder="તમારો પ્રશ્ન" type="text"/>
+<input class="w-full bg-[#333333] border-b-2 border-transparent text-white p-3 input-focus-effect transition-all" placeholder="તમારી સમસ્યા અથવા પ્રશ્ન" type="text"/>
 </div>
-<div class="flex flex-col gap-2">
+<div class="space-y-2">
 <label class="font-label-md text-label-md text-on-surface-variant">સંદેશ</label>
-<textarea class="bg-[#333333] border-b-2 border-transparent focus:border-primary-container text-white p-3 rounded-t-lg transition-all" placeholder="અહીં વિગતવાર લખો..." rows="4"></textarea>
+<textarea class="w-full bg-[#333333] border-b-2 border-transparent text-white p-3 input-focus-effect transition-all" placeholder="તમારી વિગત અહીં લખો..." rows="5"></textarea>
 </div>
-<button class="w-full bg-primary-container text-white font-bold py-4 rounded-lg hover:brightness-110 transition-all active:scale-95">
-                        સંદેશ મોકલો
-                    </button>
+<button class="bg-primary-container text-white px-10 py-4 font-bold rounded-lg hover:brightness-110 transition-all flex items-center justify-center gap-2 group" type="submit">
+                                સંદેશ મોકલો
+                                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>
+</button>
 </form>
 </div>
-<!-- Sidebar Info Cluster -->
-<div class="md:col-span-5 flex flex-col gap-6">
-<!-- Social Media Links -->
-<div class="glass-card p-6 rounded-xl">
-<h3 class="font-label-md text-label-md text-primary mb-6 uppercase tracking-widest">સોશિયલ મીડિયા કનેક્ટ</h3>
-<div class="flex flex-col gap-4">
-<a class="flex items-center gap-4 p-3 bg-secondary-container/10 rounded-lg hover:bg-secondary-container/20 transition-all group" href="#">
-<div class="w-10 h-10 rounded-full bg-[#E1306C]/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-[#E1306C]">photo_camera</span>
 </div>
-<span class="font-body-md text-body-md text-on-surface">Instagram</span>
+<!-- Contact Sidebar & Socials -->
+<div class="lg:col-span-5 space-y-8">
+<!-- Social Links -->
+<div class="glass-card p-8 rounded-xl">
+<h3 class="font-headline-md text-headline-md text-on-background mb-6">સોશિયલ મીડિયા</h3>
+<div class="grid grid-cols-1 gap-4">
+<a class="flex items-center gap-4 p-4 rounded-lg bg-surface-container-high hover:scale-[1.02] transition-transform border border-outline-variant group" href="#">
+<div class="w-12 h-12 rounded-full bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-white">camera_alt</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-background">Instagram</p>
+<p class="text-sm text-on-surface-variant">@freya_academy_official</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-container">arrow_forward_ios</span>
 </a>
-<a class="flex items-center gap-4 p-3 bg-secondary-container/10 rounded-lg hover:bg-secondary-container/20 transition-all group" href="#">
-<div class="w-10 h-10 rounded-full bg-[#0088cc]/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-[#0088cc]">send</span>
+<a class="flex items-center gap-4 p-4 rounded-lg bg-surface-container-high hover:scale-[1.02] transition-transform border border-outline-variant group" href="#">
+<div class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-white">send</span>
 </div>
-<span class="font-body-md text-body-md text-on-surface">Telegram Channel</span>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-background">Telegram</p>
+<p class="text-sm text-on-surface-variant">t.me/freya_academy</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-container">arrow_forward_ios</span>
 </a>
 </div>
 </div>
-<!-- Support Center Card (Linked from Footer intent) -->
-<div class="glass-card p-6 rounded-xl relative overflow-hidden group h-full"><div class="absolute -right-10 -top-10 w-32 h-32 bg-primary-container/10 rounded-full blur-3xl group-hover:bg-primary-container/20 transition-colors"></div><h3 class="font-label-md text-label-md text-primary mb-4 uppercase tracking-widest">સહાય કેન્દ્ર</h3><div class="space-y-4"><div class="flex gap-4"><span class="material-symbols-outlined text-primary-container">support_agent</span><div><p class="font-label-md text-label-md text-on-surface">ટેકનિકલ સપોર્ટ</p><p class="font-body-md text-body-md text-on-surface-variant">સવારે ૧૦ થી સાંજે ૬</p></div></div><div class="flex gap-4"><span class="material-symbols-outlined text-primary-container">mail</span><div><p class="font-label-md text-label-md text-on-surface">ઈમેઈલ સપોર્ટ</p><p class="font-body-md text-body-md text-on-surface-variant">support@freyasolution.com</p></div></div></div><div class="mt-8 border-t border-secondary-container pt-6"><button class="flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all">FAQ જુઓ<span class="material-symbols-outlined text-sm">arrow_forward</span></button></div></div>
+<!-- Direct Contact Info -->
+<div class="glass-card p-8 rounded-xl border-l-4 border-primary-container">
+<h3 class="font-headline-md text-headline-md text-on-background mb-4">સીધો સંપર્ક</h3>
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container">mail</span>
+<div>
+<p class="font-label-md text-label-md">ઈમેઈલ</p>
+<p class="text-on-surface-variant">support@freyaacademy.com</p>
 </div>
 </div>
-<!-- Asymmetric Location Highlight Section -->
-<section class="mt-section-gap grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-<div class="order-2 md:order-1 rounded-2xl overflow-hidden h-80 relative shadow-2xl border border-secondary-container">
-<div class="w-full h-full bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-1000" data-alt="A cinematic, low-angle shot of a high-tech corporate office building in Gandhinagar, Gujarat at night. The architectural structure features sharp lines and glass surfaces reflecting subtle red neon lights from the Mission TAT branding. The sky is a deep velvet black, with a few faint stars, creating an atmosphere of professional excellence and high-end digital infrastructure." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCjLX2i9C086C_Ew-r9MV-NGW9BESwTKS_VUUlHNZd4VWEJ6dKcwOKM4NdqD8MovgkkPh0eka2tPCWIeomgESplcVXKH7lVlMSvlqi5HsZrwNoAopLdE6Bydicw3RnD1gqQsC_AJwP4t6CpmbjoVwvG_xY6c5IWzIjshLAAAqD1XyZoEZHKcKqDU0d4OIkpv_HJZsvCMwnAq3VzusbCIh5H1eP-3B8Alko0DkErT0iNn2XireI2Quc')"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-<div class="absolute bottom-6 left-6">
-<span class="bg-primary-container text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-2 inline-block">Headquarters</span>
-<p class="font-headline-md text-headline-md text-white">ગાંધીનગર, ગુજરાત</p>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container">phone_in_talk</span>
+<div>
+<p class="font-label-md text-label-md">હેલ્પલાઇન</p>
+<p class="text-on-surface-variant">+91 98XXX XXXXX</p>
 </div>
 </div>
-<div class="order-1 md:order-2 space-y-4">
-<span class="text-primary font-label-md text-label-md uppercase tracking-widest">અમારું સરનામું</span>
-<h2 class="font-headline-lg-mobile md:font-headline-lg text-on-surface">ફ્રેયા સોલ્યુશન એકેડમી</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">
-                    સેક્ટર ૧૧, ઇન્ફોસિટી નજીક,<br/>
-                    ગાંધીનગર - ૩૮૨૦૧૦,<br/>
-                    ગુજરાત, ભારત.
-                </p>
-<div class="flex gap-4 pt-4">
-<button class="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg flex items-center gap-2 transition-all">
-<span class="material-symbols-outlined">map</span>
-                        મેપમાં જુઓ
-                    </button>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container">location_on</span>
+<div>
+<p class="font-label-md text-label-md">સરનામું</p>
+<p class="text-on-surface-variant">અમદાવાદ, ગુજરાત, ભારત.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="bg-surface-container-low py-section-gap">
+<div class="px-container-padding-mobile md:px-container-padding-desktop max-w-[1440px] mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4">વારંવાર પૂછાતા પ્રશ્નો (FAQ)</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">તમારા સામાન્ય પ્રશ્નોના ત્વરિત જવાબો અહીં મેળવો.</p>
+</div>
+<div class="max-w-4xl mx-auto space-y-4">
+<!-- FAQ Item 1 -->
+<div class="glass-card rounded-lg overflow-hidden transition-all duration-300">
+<button class="w-full p-6 text-left flex justify-between items-center group" onclick="toggleFaq(this)">
+<span class="font-headline-md text-on-background text-lg">હું અભ્યાસક્રમમાં કેવી રીતે જોડાઈ શકું?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="max-h-0 overflow-hidden transition-all duration-300 px-6 faq-content">
+<p class="pb-6 text-on-surface-variant">તમે અમારી વેબસાઇટ પર 'અભ્યાસક્રમો' વિભાગમાં જઈને તમારા મનપસંદ કોર્સ પર ક્લિક કરી શકો છો અને 'એનરોલ નાઉ' બટન દ્વારા જોડાઈ શકો છો.</p>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="glass-card rounded-lg overflow-hidden transition-all duration-300">
+<button class="w-full p-6 text-left flex justify-between items-center group" onclick="toggleFaq(this)">
+<span class="font-headline-md text-on-background text-lg">શું ફી પરત મળી શકે છે?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="max-h-0 overflow-hidden transition-all duration-300 px-6 faq-content">
+<p class="pb-6 text-on-surface-variant">અમારી રિફંડ પોલિસી મુજબ, જો તમે કોર્સ શરૂ થયાના 7 દિવસની અંદર વિનંતી કરો છો, તો તમે રિફંડ માટે પાત્ર હોઈ શકો છો. વધુ વિગતો માટે ટર્મ્સ એન્ડ કન્ડિશન વાંચો.</p>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="glass-card rounded-lg overflow-hidden transition-all duration-300">
+<button class="w-full p-6 text-left flex justify-between items-center group" onclick="toggleFaq(this)">
+<span class="font-headline-md text-on-background text-lg">મને ટેકનિકલ સમસ્યા આવી રહી છે, શું કરું?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="max-h-0 overflow-hidden transition-all duration-300 px-6 faq-content">
+<p class="pb-6 text-on-surface-variant">જો તમને લોગિન અથવા વિડિઓ જોવામાં સમસ્યા આવી રહી હોય, તો કૃપા કરીને ઉપર આપેલા સંપર્ક ફોર્મ દ્વારા અમને જણાવો અથવા સીધો અમને ઈમેઈલ કરો.</p>
+</div>
+</div>
+<!-- FAQ Item 4 -->
+<div class="glass-card rounded-lg overflow-hidden transition-all duration-300">
+<button class="w-full p-6 text-left flex justify-between items-center group" onclick="toggleFaq(this)">
+<span class="font-headline-md text-on-background text-lg">સર્ટિફિકેટ ક્યારે મળશે?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="max-h-0 overflow-hidden transition-all duration-300 px-6 faq-content">
+<p class="pb-6 text-on-surface-variant">કોર્સ પૂર્ણ કર્યા પછી અને અંતિમ પરીક્ષા પાસ કર્યાના 48 કલાકની અંદર તમારા ડેશબોર્ડ પર ડિજિટલ સર્ટિફિકેટ ઉપલબ્ધ થઈ જશે.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-gap bg-black relative overflow-hidden">
+
+<div class="relative z-10 text-center px-container-padding-mobile">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-6">હજુ પણ મૂંઝવણ છે?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">અમારી નિષ્ણાત ટીમ તમારી સહાય માટે હંમેશા તૈયાર છે.</p>
+<div class="flex flex-wrap justify-center gap-4">
+<a class="bg-primary-container text-white px-8 py-3 rounded-lg font-bold flex items-center gap-2 hover:scale-105 transition-transform" href="tel:+919800000000">
+<span class="material-symbols-outlined">call</span>
+                        કોલ કરો
+                    </a>
+<a class="bg-white/10 backdrop-blur-md text-white px-8 py-3 rounded-lg font-bold flex items-center gap-2 hover:bg-white/20 transition-all" href="#">
+<span class="material-symbols-outlined">chat</span>
+                        લાઇવ ચેટ
+                    </a>
 </div>
 </div>
 </section>
 </main>
 <!-- Footer -->
-<footer class="w-full py-12 px-container-padding-mobile md:px-container-padding-desktop flex flex-col items-center gap-4 text-center border-t border-secondary-container mt-section-gap bg-background">
-<div class="font-headline-md text-headline-md text-on-surface">MISSION TAT GUJRAT</div>
-<div class="flex flex-wrap justify-center gap-8 my-4"><a class="text-on-tertiary-container/60 hover:text-primary transition-colors font-body-md text-body-md" href="privacy.html">ગોપનીયતા નીતિ</a><a class="text-on-tertiary-container/60 hover:text-primary transition-colors font-body-md text-body-md" href="terms.html">નિયમો અને શરતો</a><a class="text-primary font-body-md text-body-md" href="contact.html">સહાય કેન્દ્ર</a></div>
-<p class="font-body-md text-body-md text-on-tertiary-container/60">
-            © ૨૦૨૪ Freya Solution Academy. સર્વાધિકાર સુરક્ષિત.
-        </p>
+<footer class="bg-surface-container-lowest py-12 px-container-padding-mobile md:px-container-padding-desktop border-t border-surface-variant">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1 md:col-span-2">
+<span class="font-headline-md text-headline-md font-bold text-primary-container mb-4 block">Freya Solution Academy</span>
+<p class="text-on-surface-variant max-w-md">ગુજરાતના વિદ્યાર્થીઓ માટે શ્રેષ્ઠ ઓનલાઇન લર્નિંગ પ્લેટફોર્મ. અમે શિક્ષણમાં ગુણવત્તા અને સુલભતા લાવવા માટે પ્રતિબદ્ધ છીએ.</p>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-background mb-4 uppercase tracking-widest">લિંક્સ</h4>
+<ul class="space-y-2 text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">અમારા વિશે</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">બ્લોગ</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">નિયમો અને શરતો</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">પ્રાઇવસી પોલિસી</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-background mb-4 uppercase tracking-widest">ફોલો કરો</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary-container transition-colors group" href="#">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-white">qr_code_2</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary-container transition-colors group" href="#">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-white">video_library</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary-container transition-colors group" href="#">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-white">share</span>
+</a>
+</div>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto mt-12 pt-8 border-t border-surface-variant text-center text-on-surface-variant text-sm">
+            © 2024 Freya Solution Academy. સર્વાધિકાર સુરક્ષિત.
+        </div>
 </footer>
-<!-- Mobile Menu Script -->
 <script>
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        menuBtn.addEventListener('click', () => {
-            // Mobile menu logic could go here
-            alert('મોબાઈલ મેનુ ટૂંક સમયમાં ઉપલબ્ધ થશે');
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.material-symbols-outlined');
+            
+            // Close other items
+            const allContents = document.querySelectorAll('.faq-content');
+            const allIcons = document.querySelectorAll('.faq-content').forEach(c => {
+                if (c !== content) {
+                    c.style.maxHeight = null;
+                    c.previousElementSibling.querySelector('.material-symbols-outlined').style.transform = 'rotate(0deg)';
+                }
+            });
+
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Simple smooth scroll interaction
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
 
-        // Floating Action Button logic for Contact Page (Suppressed per instructions on details pages, 
-        // but adding it since this is a primary landing page for support)
-        const formInputs = document.querySelectorAll('input, textarea');
-        formInputs.forEach(input => {
-            input.addEventListener('focus', () => {
-                input.parentElement.classList.add('scale-[1.01]');
+        // Form submission animation (mock)
+        const form = document.querySelector('form');
+        if(form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const btn = form.querySelector('button[type="submit"]');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> મોકલી રહ્યું છે...';
+                btn.disabled = true;
+                
+                setTimeout(() => {
+                    btn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> સફળતાપૂર્વક મોકલ્યું!';
+                    btn.classList.replace('bg-primary-container', 'bg-green-600');
+                    form.reset();
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.classList.replace('bg-green-600', 'bg-primary-container');
+                        btn.disabled = false;
+                    }, 3000);
+                }, 1500);
             });
-            input.addEventListener('blur', () => {
-                input.parentElement.classList.remove('scale-[1.01]');
-            });
-        });
+        }
     </script>
 </body></html>

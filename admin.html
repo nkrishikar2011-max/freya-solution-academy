@@ -3,236 +3,231 @@
 <html class="dark" lang="gu"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>એડમિન લોગિન | MISSION TAT GUJRAT</title>
+<title>એડમિન લોગિન - સુરક્ષિત એક્સેસ</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Noto+Sans+Gujarati:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
         body {
-            font-family: 'Inter', sans-serif;
             background-color: #000000;
             color: #e5e2e1;
-            margin: 0;
-            overflow-x: hidden;
+            font-family: 'Noto Sans Gujarati', 'Inter', sans-serif;
+            overflow: hidden;
         }
-
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            vertical-align: middle;
+        .cinema-gradient {
+            background: radial-gradient(circle at center, rgba(229, 9, 20, 0.05) 0%, rgba(0, 0, 0, 1) 70%);
         }
-
-        /* Cinema-First Glassmorphism */
         .glass-panel {
-            background: rgba(20, 20, 20, 0.75);
+            background: rgba(20, 20, 20, 0.8);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(47, 47, 47, 0.5);
         }
-
-        /* Cinematic Noir Overlay */
-        .vignette {
-            background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+        .input-focus-effect:focus {
+            outline: none;
+            border-bottom: 2px solid #E50914;
+            transition: border-color 0.3s ease;
         }
-
-        /* Focus Animation */
-        .input-glow:focus-within {
-            box-shadow: 0 0 15px rgba(229, 9, 20, 0.3);
+        .shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.03), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 6s infinite linear;
+        }
+        @keyframes shimmer {
+            0% { transform: translate(-30%, -30%) rotate(45deg); }
+            100% { transform: translate(30%, 30%) rotate(45deg); }
         }
     </style>
 <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "surface-tint": "#ffb4aa",
-                        "surface-bright": "#393939",
-                        "background": "#000000",
-                        "on-surface-variant": "#e9bcb6",
-                        "primary": "#ffb4aa",
-                        "primary-container": "#e50914",
-                        "on-primary": "#690003",
-                        "surface-container-lowest": "#0e0e0e",
-                        "surface-container-low": "#1c1b1b",
-                        "on-background": "#e5e2e1",
-                        "secondary-container": "#454747",
-                        "on-surface": "#e5e2e1"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "spacing": {
-                        "container-padding-desktop": "60px",
-                        "section-gap": "48px",
-                        "gutter": "20px",
-                        "unit": "4px"
-                    },
-                    "fontFamily": {
-                        "label-md": ["Inter"],
-                        "body-md": ["Inter"],
-                        "headline-md": ["Inter"],
-                        "headline-lg": ["Inter"],
-                        "display-lg": ["Inter"]
-                    },
-                    "fontSize": {
-                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}]
-                    }
-                }
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#737272",
+                    "on-primary-container": "#fff7f6",
+                    "inverse-surface": "#e5e2e1",
+                    "outline-variant": "#5e3f3b",
+                    "on-tertiary": "#303030",
+                    "primary": "#ffb4aa",
+                    "on-secondary": "#2f3131",
+                    "on-primary-fixed-variant": "#930007",
+                    "surface-container-highest": "#353534",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "inverse-on-surface": "#313030",
+                    "error": "#ffb4ab",
+                    "background": "#131313",
+                    "on-error-container": "#ffdad6",
+                    "inverse-primary": "#c0000c",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "on-background": "#e5e2e1",
+                    "surface-dim": "#131313",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-primary-fixed": "#410001",
+                    "tertiary": "#c8c6c6",
+                    "surface-tint": "#ffb4aa",
+                    "secondary": "#c6c6c7",
+                    "on-tertiary-container": "#fbf8f8",
+                    "surface-variant": "#353534",
+                    "primary-fixed-dim": "#ffb4aa",
+                    "on-secondary-container": "#b4b5b5",
+                    "primary-fixed": "#ffdad5",
+                    "on-surface-variant": "#e9bcb6",
+                    "on-surface": "#e5e2e1",
+                    "surface-container": "#201f1f",
+                    "on-secondary-fixed-variant": "#454747",
+                    "on-error": "#690005",
+                    "surface": "#131313",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-bright": "#393939",
+                    "outline": "#af8782",
+                    "tertiary-fixed-dim": "#c8c6c6",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "error-container": "#93000a",
+                    "on-primary": "#690003",
+                    "secondary-fixed": "#e2e2e2",
+                    "primary-container": "#e50914",
+                    "surface-container-low": "#1c1b1b",
+                    "tertiary-fixed": "#e4e2e1",
+                    "secondary-container": "#454747",
+                    "secondary-fixed-dim": "#c6c6c7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "section-gap": "48px",
+                    "container-padding-mobile": "16px",
+                    "container-padding-desktop": "60px",
+                    "gutter": "20px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter", "Noto Sans Gujarati"],
+                    "display-lg": ["Inter", "Noto Sans Gujarati"],
+                    "body-md": ["Inter", "Noto Sans Gujarati"],
+                    "headline-md": ["Inter", "Noto Sans Gujarati"],
+                    "label-md": ["Inter", "Noto Sans Gujarati"]
             }
+          }
         }
+      }
     </script>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-center relative">
-<!-- Background Cinematic Layer -->
+<body class="flex items-center justify-center min-h-screen relative">
+<!-- Background Layer -->
 <div class="fixed inset-0 z-0">
-<div class="w-full h-full bg-cover bg-center opacity-40 scale-105" data-alt="A high-contrast cinematic photograph of a futuristic digital classroom in a deep noir style. The room features glowing red holographic interfaces and dark sleek obsidian furniture. Volumetric lighting streaks across the frame from a large window overlooking a midnight cyberpunk cityscape. The overall mood is intense, professional, and sophisticated, dominated by deep blacks and vibrant red accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVDC0PIw77k3Sqnm8xBb4KYcHHuHc3Y0Kx51XIixRuSzxhW_DNaLS7IGBy-I5xlbWVkBSyb_tq8FEWAoEyrG0KTYCWTbsdR2facecEwQWkRPZECCI7dH84pBTT23HVbGCOuhlXTCcmAfK33V8cV7CVo_WFKaCjUcfhaT5O-P5RoiyCBQi8KjXe2SYHHGKsd8N0VegiC-XM_tKBYGZ19LBa00-pTTExnHy0E5IRsCCaYbJWrin3GiA')"></div>
-<div class="absolute inset-0 vignette"></div>
-<!-- Subtle Animated Grain/Noise -->
-<div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC0K5-jA7ClK7rGI5ef5YJXAwFOBmkcxpD1eWLtShUdmTbwHDsL1X4K2YzUKk9x4ff3YoFTmnksPN4IwU7QqEmFTb9PV2mZ7aP3L1vIJs-9maF_Qu9TnF_1sa_EMLCDEiZT1Kxj79twdYcj3CYYHZh2TjFsd4JGjvNzKsVu7Jj0p5ft-YC6evzVJJ8YX8lwWWGVXyT5ExoLPYk62g3_6kEAF5EpVdDJQNvmf1p8XMeXhFLs6Z_krPs');"></div>
+
+<div class="absolute inset-0 cinema-gradient"></div>
 </div>
-<!-- Header Branding -->
-<header class="absolute top-0 left-0 w-full p-8 z-20">
-<div class="max-w-[1440px] mx-auto px-gutter">
-<h1 class="font-display-lg text-primary-container text-[32px] md:text-[40px] font-black tracking-tighter uppercase">
-                MISSION TAT GUJRAT
-            </h1>
+<!-- Login Container -->
+<main class="relative z-10 w-full max-w-md px-container-padding-mobile md:px-0">
+<div class="glass-panel p-8 md:p-12 rounded-xl shadow-2xl transition-transform duration-500 hover:scale-[1.01]">
+<!-- Brand Identity -->
+<div class="flex flex-col items-center mb-10">
+<div class="w-16 h-16 bg-primary-container rounded-full flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(229,9,20,0.4)]">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;">shield_person</span>
 </div>
-</header>
-<!-- Main Content: Login Card -->
-<main class="relative z-10 w-full max-w-md px-6">
-<div class="glass-panel p-10 md:p-14 rounded-xl shadow-[0px_20px_40px_rgba(0,0,0,0.8)] flex flex-col gap-8 transform transition-all duration-700 ease-out hover:scale-[1.01]">
-<div class="space-y-2">
-<h2 class="font-headline-lg text-white text-3xl md:text-4xl">એડમિન લોગિન</h2>
-<p class="text-on-surface-variant font-body-md opacity-70">ફ્રીયા સોલ્યુશન એકેડેમી મેનેજમેન્ટ પોર્ટલ</p>
+<h1 class="font-headline-lg text-headline-lg text-center tracking-tight">એડમિન લોગિન</h1>
+<p class="text-on-surface-variant font-body-md text-body-md mt-2 opacity-80">સુરક્ષિત એક્સેસ પોર્ટલ</p>
 </div>
-<form action="#" class="space-y-6" onsubmit="event.preventDefault();">
-<!-- Mobile Number Field -->
+<!-- Form -->
+<form class="space-y-8" id="loginForm" onsubmit="return handleLogin(event)">
+<!-- Mobile Number Input -->
 <div class="space-y-2 group">
-<label class="block font-label-md text-on-surface-variant group-focus-within:text-primary transition-colors" for="mobile">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center gap-2" for="mobile">
+<span class="material-symbols-outlined text-sm">phone_android</span>
                         મોબાઈલ નંબર
                     </label>
-<div class="relative input-glow transition-all duration-300">
-<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-on-surface-variant/50">
-<span class="material-symbols-outlined" data-icon="smartphone">smartphone</span>
-</div>
-<input class="w-full bg-[#333333] border-none border-b-2 border-transparent focus:border-primary-container text-white font-body-md py-4 pl-12 pr-4 rounded-lg transition-all placeholder:text-surface-bright" id="mobile" name="mobile" placeholder="તમારો ૧૦ અંકનો નંબર" type="tel"/>
+<div class="relative">
+<input class="w-full bg-surface-container-high border-none border-b-2 border-transparent text-on-surface p-4 rounded-lg font-body-md text-body-md input-focus-effect transition-all" id="mobile" placeholder="તમારો નંબર દાખલ કરો" required="" type="tel"/>
 </div>
 </div>
-<!-- Password Field -->
+<!-- Password Input -->
 <div class="space-y-2 group">
-<label class="block font-label-md text-on-surface-variant group-focus-within:text-primary transition-colors" for="password">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center gap-2" for="password">
+<span class="material-symbols-outlined text-sm">lock</span>
                         પાસવર્ડ
                     </label>
-<div class="relative input-glow transition-all duration-300">
-<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-on-surface-variant/50">
-<span class="material-symbols-outlined" data-icon="lock">lock</span>
-</div>
-<input class="w-full bg-[#333333] border-none border-b-2 border-transparent focus:border-primary-container text-white font-body-md py-4 pl-12 pr-12 rounded-lg transition-all placeholder:text-surface-bright" id="password" name="password" placeholder="તમારો ગુપ્ત પાસવર્ડ" type="password"/>
-<button class="absolute inset-y-0 right-0 pr-4 flex items-center text-on-surface-variant/50 hover:text-white transition-colors" type="button">
-<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+<div class="relative">
+<input class="w-full bg-surface-container-high border-none border-b-2 border-transparent text-on-surface p-4 rounded-lg font-body-md text-body-md input-focus-effect transition-all" id="password" placeholder="તમારો પાસવર્ડ" required="" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors" onclick="togglePassword()" type="button">
+<span class="material-symbols-outlined" id="eyeIcon">visibility</span>
 </button>
 </div>
 </div>
 <!-- Action Button -->
-<button class="w-full bg-primary-container text-white font-bold py-4 rounded-lg text-lg hover:bg-[#ff1e1e] active:scale-[0.98] transition-all duration-300 shadow-xl flex items-center justify-center gap-2 group" type="submit">
-<span class="material-symbols-outlined transition-transform group-hover:translate-x-1" data-icon="login">login</span>
-                    સુરક્ષિત લોગિન
+<button class="shimmer w-full bg-primary-container text-white py-4 rounded-lg font-headline-md text-headline-md font-bold transition-all duration-300 hover:brightness-110 active:scale-[0.98] shadow-lg shadow-primary-container/20" type="submit">
+                    લોગિન કરો
                 </button>
+<!-- Security Notice -->
+<div class="pt-6 border-t border-surface-variant/30 text-center">
+<p class="text-on-surface-variant text-xs flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-xs">verified_user</span>
+                        આ એક સુરક્ષિત સર્વર છે. બધી ક્રિયાઓ મોનિટર કરવામાં આવે છે.
+                    </p>
+</div>
 </form>
-<!-- Links -->
-<div class="flex flex-col items-center gap-6 pt-4">
-<a class="text-primary font-label-md hover:underline decoration-2 underline-offset-4 transition-all" href="#">
-                    પાસવર્ડ ભૂલી ગયા છો?
-                </a>
-<div class="w-full h-px bg-surface-variant/30 relative">
-<span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#141414] px-4 text-[10px] text-on-surface-variant/40 tracking-widest uppercase">અથવા</span>
 </div>
-<a class="flex items-center gap-2 text-on-surface-variant/60 hover:text-white transition-colors font-body-md group" href="/">
-<span class="material-symbols-outlined text-sm transition-transform group-hover:-translate-x-1" data-icon="arrow_back">arrow_back</span>
-                    મુખ્ય પૃષ્ઠ પર પાછા જાઓ
-                </a>
-</div>
+<!-- Footer Logo -->
+<div class="mt-12 text-center opacity-40">
+<p class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant">Freya Solution Academy</p>
 </div>
 </main>
-<!-- Footer Identity -->
-<footer class="absolute bottom-0 w-full py-8 z-10 text-center">
-<p class="text-on-surface-variant/40 text-[12px] font-label-md tracking-widest">
-            © ૨૦૨૪ Freya Solution Academy. સર્વાધિકાર સુરક્ષિત.
-        </p>
-</footer>
-<!-- Subtle Particle Script for Atmospheric Effect -->
-<canvas class="fixed inset-0 pointer-events-none opacity-20" id="atmosphere"></canvas>
+<!-- UI Background Decoration Images (Contextual Cinematic Noir) -->
+<div class="fixed top-0 right-0 w-1/3 h-full pointer-events-none z-[-1] opacity-20">
+<div class="w-full h-full" data-alt="A cinematic, low-key lighting photography of a high-tech server room at night. Deep shadows and vibrant red LED status lights create a noir atmosphere. The aesthetic is clean, professional, and sophisticated, mirroring a premium streaming platform's dark mode visual style. Minimalist composition focuses on structural lines and atmospheric depth." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB8TzLzXkeRK1UsskVFdmv5StfhtIbe1gmiwr5AuyPnjUQjwq19rkm7wnlHaL9rL_NkYWoFhf4qy7DOcSg7GApg4or_NZNwpNqOrCS_ZY-0G4cXdLqZxAj-aajzMpLlNxWl2PM08CHmKqhGRmCdbBfJdIg8pNovr_l6SVYKxR2k7od7rUebtQWphn2cWZeu6IAC6Gdi1KyWE7rByM6jh4z85u3zP1kyChXjcn0OdDTR-fBANQbFyys')"></div>
+</div>
 <script>
-        const canvas = document.getElementById('atmosphere');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-
-        function resize() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-
-        window.addEventListener('resize', resize);
-        resize();
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 1.5;
-                this.speedX = (Math.random() - 0.5) * 0.2;
-                this.speedY = (Math.random() - 0.5) * 0.2;
-                this.opacity = Math.random() * 0.5;
-            }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                if (this.x > canvas.width) this.x = 0;
-                if (this.x < 0) this.x = canvas.width;
-                if (this.y > canvas.height) this.y = 0;
-                if (this.y < 0) this.y = canvas.height;
-            }
-            draw() {
-                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
+        function togglePassword() {
+            const pwdInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eyeIcon');
+            if (pwdInput.type === 'password') {
+                pwdInput.type = 'text';
+                eyeIcon.innerText = 'visibility_off';
+            } else {
+                pwdInput.type = 'password';
+                eyeIcon.innerText = 'visibility';
             }
         }
 
-        function init() {
-            for (let i = 0; i < 80; i++) {
-                particles.push(new Particle());
-            }
+        function handleLogin(event) {
+            event.preventDefault();
+            const btn = event.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerText;
+            
+            // Micro-interaction
+            btn.disabled = true;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span>';
+            
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.innerText = originalText;
+                alert('એક્સેસ નકારવામાં આવ્યો: કૃપા કરીને તમારી ઓળખ ચકાસો.');
+            }, 1500);
+            
+            return false;
         }
 
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
-            requestAnimationFrame(animate);
-        }
-
-        init();
-        animate();
-
-        // Simple visibility toggle for password
-        const passInput = document.getElementById('password');
-        const toggleBtn = passInput.nextElementSibling;
-        toggleBtn.addEventListener('click', () => {
-            const type = passInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passInput.setAttribute('type', type);
-            const icon = type === 'password' ? 'visibility' : 'visibility_off';
-            toggleBtn.querySelector('.material-symbols-outlined').textContent = icon;
+        // Mouse Move Interactive Spotlight
+        document.addEventListener('mousemove', (e) => {
+            const body = document.querySelector('body');
+            const x = e.clientX;
+            const y = e.clientY;
+            body.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(229, 9, 20, 0.03) 0%, rgba(0, 0, 0, 1) 50%)`;
         });
     </script>
 </body></html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="gu"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ડાઉનલોડ વેરિફિકેશન - Freya Solution Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#737272",
+                    "on-primary-container": "#fff7f6",
+                    "inverse-surface": "#e5e2e1",
+                    "outline-variant": "#5e3f3b",
+                    "on-tertiary": "#303030",
+                    "primary": "#ffb4aa",
+                    "on-secondary": "#2f3131",
+                    "on-primary-fixed-variant": "#930007",
+                    "surface-container-highest": "#353534",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "inverse-on-surface": "#313030",
+                    "error": "#ffb4ab",
+                    "background": "#131313",
+                    "on-error-container": "#ffdad6",
+                    "inverse-primary": "#c0000c",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "on-background": "#e5e2e1",
+                    "surface-dim": "#131313",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-primary-fixed": "#410001",
+                    "tertiary": "#c8c6c6",
+                    "surface-tint": "#ffb4aa",
+                    "secondary": "#c6c6c7",
+                    "on-tertiary-container": "#fbf8f8",
+                    "surface-variant": "#353534",
+                    "primary-fixed-dim": "#ffb4aa",
+                    "on-secondary-container": "#b4b5b5",
+                    "primary-fixed": "#ffdad5",
+                    "on-surface-variant": "#e9bcb6",
+                    "on-surface": "#e5e2e1",
+                    "surface-container": "#201f1f",
+                    "on-secondary-fixed-variant": "#454747",
+                    "on-error": "#690005",
+                    "surface": "#131313",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-bright": "#393939",
+                    "outline": "#af8782",
+                    "tertiary-fixed-dim": "#c8c6c6",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "error-container": "#93000a",
+                    "on-primary": "#690003",
+                    "secondary-fixed": "#e2e2e2",
+                    "primary-container": "#e50914",
+                    "surface-container-low": "#1c1b1b",
+                    "tertiary-fixed": "#e4e2e1",
+                    "secondary-container": "#454747",
+                    "secondary-fixed-dim": "#c6c6c7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "section-gap": "48px",
+                    "container-padding-mobile": "16px",
+                    "container-padding-desktop": "60px",
+                    "gutter": "20px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #000000;
+            color: #e5e2e1;
+        }
+        .cinematic-overlay {
+            background: radial-gradient(circle at center, rgba(20, 20, 20, 0.4) 0%, rgba(0, 0, 0, 0.9) 100%);
+        }
+        .glass-card {
+            background: rgba(20, 20, 20, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(47, 47, 47, 0.5);
+        }
+        .hover-scale {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        @keyframes subtle-pulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+        .animate-subtle {
+            animation: subtle-pulse 4s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-hidden">
+<!-- Background Cinematic Visual -->
+<div class="fixed inset-0 z-0">
+<div class="absolute inset-0 cinematic-overlay z-10"></div>
+<div class="w-full h-full bg-cover bg-center opacity-40 grayscale" data-alt="A cinematic, high-contrast dark photography of a modern library architecture at night. Dramatic shadows and sharp highlights create a noir atmosphere. The lighting is focused on distant bookshelves, with deep blacks dominating the foreground. Minimalist and professional style with a deep crimson accent light bleeding from the edge, matching the premium red brand identity." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCZ7rKHU6DWBL1cS4PA_csyCJ21VS2rHIdlnBq5hFebmokIrk2XsPtJqJbM9JgHMOEXrtdbPQKvMuh7HObD6qlOhSiq0HGFVlxs4BjdgE58VNxt2gUCrpE_JmDLZAaDVFKcsIfn4eqKikR8gcPBl5jhE-OBRuRPNaMkXzrZW2EZOvARsno3YD3kz1wIOOgU6Hkl4_zsdH9vOO1xJJAJ_GSSDQFUvoFHCrsTG6ak5SRrlFr8n5F0R24')">
+</div>
+
+</div>
+<!-- Header Navigation Shell (Restricted) -->
+<nav class="flex justify-between items-center px-container-desktop w-full h-16 sticky top-0 z-40 bg-opacity-80 backdrop-blur-md bg-surface-container-lowest border-b border-surface-variant">
+<div class="font-headline-md text-headline-md font-bold text-primary-container">
+            Freya Solution Academy
+        </div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-on-surface-variant">help</span>
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional close-up headshot of an administrative avatar in a dark aesthetic. High-key lighting on one side of the face, deep shadow on the other. The background is a blurred dark office environment with subtle red neon accents. Modern corporate minimalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOE5WUNdSBd7jOrYpSTtx54AZ8y8sShJwGghVbEeSBvRMsluWqgaEeymAS9UF6e4OG0BKJ-Tpc_1uQDOzRZYUbwt3SFom7twoHTs74RSuZvKnENslot5YlOxTk6dtxl9axHsZ2GjaWr83xI0avSsYLqtCvih2KN3SKfDQoglV75nbeEbir1lndvkSOJbW5ha0gfyMc6LsKxev3cPU29HjpFB5n1DN6DTnMv9KjF7m0gOLiV7IfcuM"/>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas / Verification Portal -->
+<main class="relative z-20 flex items-center justify-center min-h-[calc(100vh-64px)] px-container-padding-mobile md:px-container-padding-desktop">
+<!-- Verification Card -->
+<div class="w-full max-w-lg glass-card rounded-xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+<!-- Decorative Accent -->
+<div class="absolute top-0 left-0 w-full h-1 bg-primary-container"></div>
+<header class="text-center mb-10">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-container/10 mb-6">
+<span class="material-symbols-outlined text-primary-container text-4xl" style="font-variation-settings: 'FILL' 1;">cloud_download</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-2 text-on-surface">ડાઉનલોડ વેરિફિકેશન - ડેટા એન્ટ્રી</h1>
+<p class="text-on-surface-variant font-label-md">કૃપા કરીને ફાઇલ ડાઉનલોડ કરવા માટે નીચેની વિગતો ભરો.</p>
+</header>
+<form class="space-y-6" id="verificationForm">
+<!-- Name Input -->
+<div class="space-y-2">
+<label class="font-label-md text-on-surface-variant block ml-1" for="studentName">તમારું નામ</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-tertiary">person</span>
+<input class="w-full bg-[#333333] border-b-2 border-transparent focus:border-primary-container focus:ring-0 text-white pl-12 pr-4 py-4 rounded-t-lg transition-all outline-none" id="studentName" placeholder="પૂરું નામ લખો" required="" type="text"/>
+</div>
+</div>
+<!-- Mobile Input -->
+<div class="space-y-2">
+<label class="font-label-md text-on-surface-variant block ml-1" for="mobileNumber">મોબાઇલ નંબર</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-tertiary">call</span>
+<input class="w-full bg-[#333333] border-b-2 border-transparent focus:border-primary-container focus:ring-0 text-white pl-12 pr-4 py-4 rounded-t-lg transition-all outline-none" id="mobileNumber" pattern="[0-9]{10}" placeholder="10 આંકડાનો મોબાઈલ નંબર" required="" type="tel"/>
+</div>
+<p class="text-xs text-tertiary-container mt-1 ml-1">તમારા ડેટાને Firebase સાથે સુરક્ષિત રીતે સિંક કરવામાં આવશે.</p>
+</div>
+<!-- Submit Button -->
+<button class="w-full bg-primary-container text-white font-bold py-5 rounded-lg hover:brightness-110 transition-all flex items-center justify-center gap-3 mt-8 hover-scale group" type="submit">
+<span>ડાઉનલોડ શરૂ કરો</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</form>
+<!-- Success Overlay (Hidden by default) -->
+<div class="hidden absolute inset-0 bg-surface-container-lowest z-50 flex flex-col items-center justify-center p-10 text-center" id="successOverlay">
+<div class="animate-bounce mb-6">
+<span class="material-symbols-outlined text-primary-container text-6xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">વેરિફિકેશન સફળ!</h2>
+<p class="text-on-surface-variant mb-8">તમને હવે Google Drive પર મોકલવામાં આવી રહ્યા છે.</p>
+<div class="w-full max-w-xs bg-surface-variant h-1 rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-0 transition-all duration-1000 ease-out" id="progressBar"></div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Security Note -->
+<footer class="fixed bottom-0 w-full p-6 text-center text-on-tertiary-fixed-variant pointer-events-none">
+<p class="text-xs tracking-widest uppercase">SECURED BY FREYA FIREBASE ENCRYPTION © 2024</p>
+</footer>
+<script>
+        document.getElementById('verificationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('studentName').value;
+            const mobile = document.getElementById('mobileNumber').value;
+            
+            // Logic for Firebase collection would go here
+            console.log("Data Captured:", { name, mobile, timestamp: new Date() });
+
+            // Show Success Animation
+            const successOverlay = document.getElementById('successOverlay');
+            const progressBar = document.getElementById('progressBar');
+            
+            successOverlay.classList.remove('hidden');
+            
+            // Animate progress bar and redirect
+            setTimeout(() => {
+                progressBar.style.width = '100%';
+            }, 100);
+
+            setTimeout(() => {
+                // Example Google Drive Link
+                window.location.href = "https://drive.google.com";
+            }, 1500);
+        });
+
+        // Input visual feedback
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.querySelector('.material-symbols-outlined').classList.add('text-primary-container');
+            });
+            input.addEventListener('blur', () => {
+                if(!input.value) {
+                    input.parentElement.querySelector('.material-symbols-outlined').classList.remove('text-primary-container');
+                }
+            });
+        });
+    </script>
+</body></html>
