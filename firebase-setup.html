@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-
-<html class="dark" lang="gu"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!DOCTYPE html><html class="dark" lang="gu"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>MISSION TAT GUJRAT - Firebase સેટઅપ</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -144,7 +142,7 @@
 <p class="text-on-surface-variant text-label-md">મિશન TAT ગુજરાત</p>
 </div>
 <nav class="flex-1 mt-4">
-<a class="flex items-center px-6 py-4 text-on-surface-variant hover:bg-surface-container-high transition-all" href="admin.html">
+<a class="flex items-center px-6 py-4 text-on-surface-variant hover:bg-surface-container-high transition-all" href="admin_dashboard.html">
 <span class="material-symbols-outlined mr-4" data-icon="dashboard">dashboard</span>
 <span class="font-label-md text-label-md">ડેશબોર્ડ</span>
 </a>
@@ -152,7 +150,7 @@
 <span class="material-symbols-outlined mr-4" data-icon="library_add">library_add</span>
 <span class="font-label-md text-label-md">સંસાધન સંચાલન</span>
 </a>
-<a class="flex items-center px-6 py-4 sidebar-item-active transition-all" href="firebase-setup.html">
+<a class="flex items-center px-6 py-4 sidebar-item-active transition-all" href="#settings-section">
 <span class="material-symbols-outlined mr-4" data-icon="settings">settings</span>
 <span class="font-label-md text-label-md">સેટિંગ્સ</span>
 </a>
@@ -240,27 +238,27 @@
 <form class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
 <div class="flex flex-col gap-2">
 <label class="text-label-md text-on-surface-variant">API કી (API Key)</label>
-<input class="bg-surface-container-high border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container placeholder:text-surface-variant" placeholder="AIzaSy..." type="text"/>
+<input class="bg-surface-container-high border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container placeholder:text-surface-variant" placeholder="AIzaSy..." type="text">
 </div>
 <div class="flex flex-col gap-2">
 <label class="text-label-md text-on-surface-variant">ઓથ ડોમેન (Auth Domain)</label>
-<input class="bg-surface-container-high border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container placeholder:text-surface-variant" placeholder="your-project.firebaseapp.com" type="text"/>
+<input class="bg-surface-container-high border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container placeholder:text-surface-variant" placeholder="your-project.firebaseapp.com" type="text">
 </div>
 <div class="flex flex-col gap-2">
 <label class="text-label-md text-on-surface-variant">પ્રોજેક્ટ ID (Project ID)</label>
-<input class="bg-surface-container-high border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container placeholder:text-surface-variant" placeholder="your-project-id" type="text"/>
+<input class="bg-surface-container-high border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container placeholder:text-surface-variant" placeholder="your-project-id" type="text">
 </div>
 <div class="flex flex-col gap-2">
 <label class="text-label-md text-on-surface-variant">સ્ટોરેજ બકેટ (Storage Bucket)</label>
-<input class="bg-surface-container-high border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container placeholder:text-surface-variant" placeholder="your-project.appspot.com" type="text"/>
+<input class="bg-surface-container-high border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container placeholder:text-surface-variant" placeholder="your-project.appspot.com" type="text">
 </div>
 <div class="flex flex-col gap-2">
 <label class="text-label-md text-on-surface-variant">મેસેજિંગ સેન્ડર ID (Messaging Sender ID)</label>
-<input class="bg-surface-container-high border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container placeholder:text-surface-variant" placeholder="1234567890" type="text"/>
+<input class="bg-surface-container-high border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container placeholder:text-surface-variant" placeholder="1234567890" type="text">
 </div>
 <div class="flex flex-col gap-2">
 <label class="text-label-md text-on-surface-variant">એપ ID (App ID)</label>
-<input class="bg-surface-container-high border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container placeholder:text-surface-variant" placeholder="1:1234567890:web:abcd1234" type="text"/>
+<input class="bg-surface-container-high border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container placeholder:text-surface-variant" placeholder="1:1234567890:web:abcd1234" type="text">
 </div>
 </form>
 <div class="mt-12 flex flex-col sm:flex-row justify-end gap-4">
@@ -290,4 +288,6 @@
 <div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] rounded-full bg-primary-container blur-[120px] animate-pulse"></div>
 <div class="absolute -bottom-[10%] -right-[10%] w-[30%] h-[30%] rounded-full bg-secondary-container blur-[100px] delay-1000 animate-pulse"></div>
 </div>
+
+
 </body></html>
